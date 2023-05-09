@@ -2,8 +2,7 @@ const express = require('express');
 const app = express();
 //importing routers
 const userRouter = require('./routers/userRouter');
-
-const userRouter = require('./routers/userRouter')
+const cors = require('cors');
 
 app.use(cors({
     origin: ['http://localhost:3000']
