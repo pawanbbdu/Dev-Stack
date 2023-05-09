@@ -6,22 +6,36 @@ import Signup from "./components/main/Signup";
 import Navbar from "./components/main/Navbar";
 import Main from "./components/main";
 import Contact from "./components/main/Contact";
+import User from "./components/user";
+import SearchDeveloper from "./components/user/SearchDeveloper";
+import CompareDeveloper from "./components/user/CompareDevelopers";
+import AdminProvider from "./context/AdminProvider";
+import UserProvider from "./context/UserProvider";
 
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={ <Navigate to="/main/home" /> } />
-          <Route path="main" element={ <Main /> } >
+        <AdminProvider>
+          <UserProvider>
+            <Routes>
+              <Route path="/" element={<Navigate to="/main/home" />} />
+              <Route path="main" element={<Main />} >
 
-          <Route path="home" element={ <Home /> } />
-          <Route path="login" element={ <Login /> } />
-          <Route path="signup" element={ <Signup /> } />
-          <Route path="contact" element={ <Contact /> } />
-          </Route>
-        </Routes>
+                <Route path="home" element={<Home />} />
+                <Route path="login" element={<Login />} />
+                <Route path="signup" element={<Signup />} />
+                <Route path="contact" element={<Contact />} />
+                <Route path="search" element={<SearchDeveloper />} />
+                <Route path="compare" element={<CompareDeveloper />} />
+              </Route>
+              <Route path="user" element={<User />} >
+
+              </Route>
+            </Routes>
+          </UserProvider>
+        </AdminProvider>
       </BrowserRouter>
 
     </div>
