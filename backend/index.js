@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 //importing routers
 const userRouter = require('./routers/userRouter');
+const historyRouter = require('./routers/historyRouter');
 const cors = require('cors');
 
 app.use(cors({
@@ -12,6 +13,7 @@ app.use(cors({
 app.use(express.json());
 //adding routers
 app.use('/user', userRouter);
+app.use('/history', historyRouter);
 
 const port = 5000;
 
