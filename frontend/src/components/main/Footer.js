@@ -61,22 +61,22 @@ const Footer = () => {
             <h6 className="text-uppercase fw-bold mb-4">Products</h6>
             <p>
               <a href="#!" className="text-reset">
-                Angular
+                Mongo DB
               </a>
             </p>
             <p>
               <a href="#!" className="text-reset">
-                React
+                React JS
               </a>
             </p>
             <p>
               <a href="#!" className="text-reset">
-                Vue
+                Express JS
               </a>
             </p>
             <p>
               <a href="#!" className="text-reset">
-                Laravel
+                Node JS
               </a>
             </p>
           </div>
@@ -112,18 +112,18 @@ const Footer = () => {
             {/* Links */}
             <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
             <p>
-              <i className="fas fa-home me-3 text-secondary" /> New York, NY
-              10012, US
+              <i className="fas fa-home me-3 text-secondary" /> Lucknow, UP
+              226028, india
             </p>
             <p>
               <i className="fas fa-envelope me-3 text-secondary" />
-              info@example.com
+               devstack@gmail.com
             </p>
             <p>
-              <i className="fas fa-phone me-3 text-secondary" /> + 01 234 567 88
+              <i className="fas fa-phone me-3 text-secondary" /> + 91 99 19 74 17 38
             </p>
             <p>
-              <i className="fas fa-print me-3 text-secondary" /> + 01 234 567 89
+              <i className="fas fa-print me-3 text-secondary" /> + 91 89 48 97 39 30
             </p>
           </div>
           {/* Grid column */}
@@ -137,9 +137,9 @@ const Footer = () => {
       className="text-center p-4"
       style={{ backgroundColor: "rgba(0, 0, 0, 0.025)" }}
     >
-      © 2021 Copyright:
+      © 2023 Copyright:
       <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-        MDBootstrap.com
+        Devstack.com
       </a>
     </div>
     {/* Copyright */}

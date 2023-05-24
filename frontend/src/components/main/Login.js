@@ -1,6 +1,43 @@
-import React from 'react'
+import React from 'react';
+import {useFormik} from 'formik';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+
+  const loginForm = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+
+    onSubmit: async (values) => {
+      console.log(values);
+
+      const res = await fetch('http://localhost:5000/user/authenticate', {
+        method: 'POST',
+        body : JSON.stringify(values),
+        headers : {
+          'Content-Type' : 'application/json'
+        }
+      });
+
+      if(res.status === 200){ 
+          Swal.fire({
+            icon : "success",
+            title: "Success",
+            text: "Loged in Successfully"
+          })
+      }else if(res.status === 401){
+        Swal.fire({
+          icon : "error",
+          title: "Error",
+          text: "Invalid Credentials"
+        })
+      }
+
+    },
+  });
+
   return (
     <section className="vh-100">
   <div className="container-fluid h-custom">
@@ -13,7 +50,7 @@ const Login = () => {
         />
       </div>
       <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form>
+        <form onSubmit={loginForm.handleSubmit}>
           <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
             <p className="lead fw-normal mb-0 me-3">Sign in with</p>
             <button type="button" className="btn btn-primary btn-floating mx-1">
@@ -33,7 +70,9 @@ const Login = () => {
           <div className="form-outline mb-4">
             <input
               type="email"
-              id="form3Example3"
+              id="email"
+              value={loginForm.values.email}
+              onChange={loginForm.handleChange}
               className="form-control form-control-lg"
               placeholder="Enter a valid email address"
             />

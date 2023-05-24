@@ -13,6 +13,7 @@ import AdminProvider from "./context/AdminProvider";
 import UserProvider from "./context/UserProvider";
 
 
+
 function App() {
   return (
     <div>
@@ -27,11 +28,10 @@ function App() {
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<Signup />} />
                 <Route path="contact" element={<Contact />} />
-                <Route path="search" element={<SearchDeveloper />} />
-                <Route path="compare" element={<CompareDeveloper />} />
               </Route>
               <Route path="user" element={<User />} >
-
+                <Route path="search" element={<SearchDeveloper />} />
+                <Route path="compare" element={<CompareDeveloper />} />
               </Route>
             </Routes>
           </UserProvider>

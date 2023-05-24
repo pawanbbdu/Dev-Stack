@@ -12,7 +12,7 @@ const CompareDeveloper = () => {
 
   const [repoData, setRepoData] = useState([]);
 
-  const [devRank, setDevRank] = useState(null);1
+  const [devRank, setDevRank] = useState(null);
 
   // const searchDeveloper = async () => {
   //   const response = await fetch(`https://api.github.com/users/${devUsername}`);
