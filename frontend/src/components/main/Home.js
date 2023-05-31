@@ -22,20 +22,7 @@ const Home = () => {
       __html: "<% include ./styles.css %>\n         \n     "
     }}
   />
-  <header>
-    <h2 href="#"> Mountain Travel</h2>
-    <nav>
-      <li>
-        <a href="#">Main</a>{" "}
-      </li>
-      <li>
-        <a href="#">404</a>{" "}
-      </li>
-      <li>
-        <a href="#">Contact</a>{" "}
-      </li>
-    </nav>
-  </header>
+  
   <section className="hero">
     <div
       className="background-image"
@@ -45,8 +32,8 @@ const Home = () => {
       }}
     />
     <div className="hero-content-area">
-      <h1>Mountain Travel</h1>
-      <h3> Unmissable Adventure Tours Around the World</h3>
+      <h1>Dev Stack</h1>
+      <h3>Developer Friendy Website</h3>
       <a href="#" className="btn">
         Contact Us
       </a>
@@ -54,7 +41,7 @@ const Home = () => {
   </section>
   <section className="destinations">
     <h3 className="title">Rest information will go here:</h3>
-    <p>blah blash blahs blahs blahss</p>
+    <p>This is best for Company hiring program and developers self comparing</p>
     <hr />
   </section>
   <section className="contact">
