@@ -11,13 +11,16 @@ import SearchDeveloper from "./components/user/SearchDeveloper";
 import CompareDeveloper from "./components/user/CompareDevelopers";
 import AdminProvider from "./context/AdminProvider";
 import UserProvider from "./context/UserProvider";
-
+import UserAuth from "./auth/UserAuth";
+import { Toaster } from "react-hot-toast";
+import History from "./components/user/History";
 
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+      <Toaster position="top-center" />
         <AdminProvider>
           <UserProvider>
             <Routes>
@@ -29,9 +32,10 @@ function App() {
                 <Route path="signup" element={<Signup />} />
                 <Route path="contact" element={<Contact />} />
               </Route>
-              <Route path="user" element={<User />} >
+              <Route path="user" element={ <UserAuth> <User /> </UserAuth>} >
                 <Route path="search" element={<SearchDeveloper />} />
                 <Route path="compare" element={<CompareDeveloper />} />
+                <Route path="history" element={<History />} />
               </Route>
             </Routes>
           </UserProvider>

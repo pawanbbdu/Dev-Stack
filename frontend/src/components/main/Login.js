@@ -1,8 +1,12 @@
 import React from "react";
 import { useFormik } from "formik";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+
+  const navigate = useNavigate();
+
   const loginForm = useFormik({
     initialValues: {
       email: "",
@@ -26,6 +30,11 @@ const Login = () => {
           title: "Success",
           text: "Loged in Successfully",
         });
+
+        const data = await res.json();
+        sessionStorage.setItem("user", JSON.stringify(data));
+        navigate('/user/search')
+
       } else if (res.status === 401) {
         Swal.fire({
           icon: "error",
@@ -94,7 +103,9 @@ const Login = () => {
                 </label>
                 <input
                   type="password"
-                  id="form3Example4"
+                  id="password"
+                  value={loginForm.values.password}
+                  onChange={loginForm.handleChange}
                   className="form-control form-control-lg"
                   placeholder="Enter password"
                 />
