@@ -17,35 +17,15 @@ const Navbar = () => {
   const showAvatar = () => {
     return (
       <li className="nav-item dropdown">
-        <a
-          className="nav-link dropdown-toggle"
-          href="#"
+        <NavLink
+          className="nav-link"
+          to="/user/profile"
           role="button"
-          data-bs-toggle="dropdown"
           aria-expanded="false"
         >
           <img src={currentUser.avatar?`${url}/${currentUser.avatar}` : 'https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=2000'} className="rounded-circle" height={30} />
-        </a>
-        <ul className="dropdown-menu">
-          <li>
-            <NavLink className="dropdown-item" to="/user/profile">
-              Profile
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="dropdown-item" to="/user/mytemplates">
-              My Templates
-            </NavLink>
-          </li>
-          <li>
-            <hr className="dropdown-divider" />
-          </li>
-          <li>
-            <a className="dropdown-item" onClick={logout} type="button">
-              Logout
-            </a>
-          </li>
-        </ul>
+        </NavLink>
+        
       </li>
     );
   };
@@ -92,18 +72,27 @@ const Navbar = () => {
               <NavLink
                 className="nav-link"
                 aria-current="page"
-                to="/user/mytemplates"
+                to="/user/search"
               >
-                My Templates
+                Search Developers
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
                 className="nav-link"
                 aria-current="page"
-                to="/user/generator"
+                to="/user/compare"
               >
-                Generate Boilerplate
+                Compare Developers
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                aria-current="page"
+                to="/user/history"
+              >
+                Saved Reports
               </NavLink>
             </li>
           </ul>

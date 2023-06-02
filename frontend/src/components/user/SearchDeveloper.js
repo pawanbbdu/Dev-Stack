@@ -4,7 +4,7 @@ import { Octokit } from '@octokit/rest';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 const octokit = new Octokit({
-  auth: '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'
+  auth: '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'
 });
 
 const SearchDeveloper = () => {
@@ -157,7 +157,7 @@ const SearchDeveloper = () => {
   const devCard = (devData) => {
     if (devData !== null) {
       return (
-        <div className="card">
+        <div className="card mb-3">
           <div className="card-body">
             <div className="row">
               <div className="col-md-3">
@@ -181,7 +181,7 @@ const SearchDeveloper = () => {
                     View More
                   </Link>
                   <Link to={devData.url} className="btn btn-dark mt-4 me-2">
-                    &nbsp;&nbsp;<i class="fa-brands fa-github"></i> Github Profile
+                    &nbsp;&nbsp;<i class="fa-brands fa-github"></i> View Github Profile
                   </Link>
                 </div>
               </div>
@@ -193,6 +193,18 @@ const SearchDeveloper = () => {
   };
 
   const displayDevList = () => {
+    if (devList.length === 0)
+      return (
+        <div>
+          <img
+            alt=""
+            src="/developer.png"
+            width={300}
+            className="d-flex m-auto"
+          />
+          <h1 className='text-light text-center mt-3'>Click on Search Button to View Developers from Github</h1>
+        </div>
+      );
     return devList.map((devData) => devCard(devData));
   };
 
@@ -201,8 +213,8 @@ const SearchDeveloper = () => {
   }, []);
 
   return (
-    <div>
-      <header className='header' style={{backgroundImage: `linear-gradient(to right, #0000004f, #0000004f), url('https://wallpapercave.com/wp/wp6350571.jpg')`}}>
+    <div style={{ backgroundColor: '#97c9dd', minHeight: '100vh' }}>
+      <header className="header" style={{ backgroundImage: `linear-gradient(to right, #0000004f, #0000004f), url('https://wallpapercave.com/wp/wp6350571.jpg')` }}>
         <div className="container py-5">
           <p className="text-center text-white display-3 fw-bold text-dark">Search Developers</p>
           <div className="row">
@@ -231,9 +243,9 @@ const SearchDeveloper = () => {
               /> */}
             </div>
             <div className="col-md-4">
-                            <label className="form-label text-white" >Select Technology</label>
-                            <input type="text" className="form-control" onChange={e => setLocation(e.target.value)} value={location} />
-                        </div>
+              <label className="form-label text-white">Select Technology</label>
+              <input type="text" className="form-control" onChange={(e) => setLocation(e.target.value)} value={location} />
+            </div>
           </div>
           <button className="mt-4 btn btn-primary btn-lg w-100" onClick={getDevelopersByLocationAndTechnology}>
             <i className="fas fa-search"></i> Search{' '}
@@ -241,10 +253,13 @@ const SearchDeveloper = () => {
         </div>
       </header>
       <hr />
-      <button className="btn btn-primary" onClick={saveHistory}>
-        Save History
-      </button>
-      <div className="container">{displayDevList()}</div>
+
+      <div className="container">
+        <button className="btn btn-primary my-3" onClick={saveHistory}>
+          <i class="fa fa-history" aria-hidden="true"></i> Save History
+        </button>
+        {displayDevList()}
+      </div>
     </div>
   );
 };
