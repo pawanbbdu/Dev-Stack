@@ -1,23 +1,19 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import app_config from '../../config'
+import Logo from '../Logo'
 
 const Navbar = () => {
   return (
     <>
   {/* Navbar */}
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: app_config.themeColor }}>
     {/* Container wrapper */}
     <div className="container">
       {/* Navbar brand */}
-      <a className="navbar-brand me-2" href="https://mdbgo.com/">
-        <img
-          src="/icondev.png"
-          height={40}
-          alt="icon logo"
-          loading="lazy"
-          style={{ marginTop: "-1px" }}
-        />
-      </a>
+      <NavLink className="navbar-brand me-2" to="/main/home">
+        <Logo  title={'Dev Stack'} />
+      </NavLink>
       {/* Toggle button */}
       <button
         className="navbar-toggler"

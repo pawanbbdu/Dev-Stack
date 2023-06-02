@@ -14,6 +14,7 @@ import UserProvider from "./context/UserProvider";
 import UserAuth from "./auth/UserAuth";
 import { Toaster } from "react-hot-toast";
 import History from "./components/user/History";
+import UserProfile from "./components/user/UserProfile";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
               <Route path="user" element={ <UserAuth> <User /> </UserAuth>} >
                 <Route path="search" element={<SearchDeveloper />} />
                 <Route path="compare" element={<CompareDeveloper />} />
+                <Route path="profile" element={<UserProfile />} />
                 <Route path="history" element={<History />} />
               </Route>
             </Routes>

@@ -75,7 +75,7 @@ const UserProfile = () => {
 
 
   return (
-    <div>
+    <div style={{ backgroundColor: '#97c9dd', minHeight: '100vh' }}>
       <div className="container py-5">
         <div className="row">
           <div className="col-md-4 mb-4">

@@ -1,11 +1,12 @@
 import React from 'react'
+import app_config from '../../config';
 
 const Footer = () => {
     return (
         <>
 
   {/* Footer */}
-  <footer className="text-center text-lg-start bg-white text-muted">
+  <footer className="text-center text-lg-start text-white" style={{ backgroundColor: app_config.themeColor }}>
     {/* Section: Social media */}
     <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
       {/* Left */}

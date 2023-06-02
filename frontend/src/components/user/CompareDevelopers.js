@@ -2,7 +2,7 @@
   import { Octokit } from "@octokit/rest";
   import { Link } from "react-router-dom";
   const octokit = new Octokit({
-    auth: "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",
+    auth: "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",
   });
   const CompareDeveloper = () => {
     const [devUsername, setDevUsername] = useState("");
@@ -159,10 +159,10 @@
     };
 
     return (
-      <div>
-        <header>
+      <div style={{ backgroundColor: '#97c9dd', minHeight: '100vh' }}>
+        <header className="header" style={{backgroundImage: `url('https://wallpapercave.com/wp/wp4932329.jpg')`, height: '300px', backgroundPosition: 'center'}}>
           <div className="container py-5">
-            <p className="display-4 text-center fw-bold">Compare Developer</p>
+            <p className="display-4 text-center fw-bold text-white">Compare Developers</p>
           </div>
         </header>
         <hr />
@@ -181,7 +181,7 @@
           <div className="container-fluid">
             <div className="row">
               {compareDevs.map((devData) => (
-                <div className="col-md">{devCard(devData)}</div>
+                <div className="col-md-3">{devCard(devData)}</div>
               ))}
             </div>
           </div>
