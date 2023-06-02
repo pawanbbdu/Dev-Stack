@@ -44,28 +44,19 @@ const Navbar = () => {
               Contact
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/main/signup">
-              Signup
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/main/Login">
-              Login
-            </NavLink>
-          </li>
+          
         </ul>
         {/* Left links */}
         <div className="d-flex align-items-center">
-          <button type="button" className="btn btn-link px-3 me-2">
+          <NavLink to="/main/Login" className="btn btn-link px-3 me-2">
             Login
-          </button>
-          <button type="button" className="btn btn-primary me-3">
+          </NavLink>
+          <NavLink to="/main/signup" className="btn btn-primary me-3">
             Sign up for free
-          </button>
+          </NavLink>
           <a
             className="btn btn-dark px-3"
-            href="https://github.com/mdbootstrap/mdb-ui-kit"
+            href="#"
             role="button"
           >
             <i className="fab fa-github" />

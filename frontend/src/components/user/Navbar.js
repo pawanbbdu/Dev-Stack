@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import app_config from "../../config";
 import { NavLink } from "react-router-dom";
 import { useUserContext } from "../../context/UserProvider";
+import Logo from "../Logo";
 
 const Navbar = () => {
   const { title, themeColor } = app_config;
@@ -23,7 +24,7 @@ const Navbar = () => {
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          <img src={currentUser.avatar?`${url}/${currentUser.avatar}` : '/avatar.webp'} className="rounded-circle" height={30} />
+          <img src={currentUser.avatar?`${url}/${currentUser.avatar}` : 'https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=2000'} className="rounded-circle" height={30} />
         </a>
         <ul className="dropdown-menu">
           <li>
@@ -57,8 +58,7 @@ const Navbar = () => {
       <div className="container">
         <NavLink className="navbar-brand" to="/main/home">
           <div className="d-flex align-items-center">
-            <img src="/logo.png" height={50} />
-            <h3 className="ms-2">{title}</h3>
+            <Logo title={"Dev Stack"} />
           </div>
         </NavLink>
         <button
