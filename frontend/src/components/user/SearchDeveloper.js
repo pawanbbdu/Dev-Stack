@@ -202,17 +202,17 @@ const SearchDeveloper = () => {
 
   return (
     <div>
-      <header>
+      <header className='header' style={{backgroundImage: `linear-gradient(to right, #0000004f, #0000004f), url('https://wallpapercave.com/wp/wp6350571.jpg')`}}>
         <div className="container py-5">
-          <p className="text-center display-3 fw-bold text-dark">Search Developers</p>
+          <p className="text-center text-white display-3 fw-bold text-dark">Search Developers</p>
           <div className="row">
             <div className="col-md-4">
-              <label className="form-label">Select Country</label>
+              <label className="form-label text-white">Select Location</label>
               <input type="text" className="form-control" onChange={(e) => setLocation(e.target.value)} value={location} />
             </div>
             <div className="col-md-4">
-              <label className="form-label">Select Technology</label>
-              {/* <Select
+              <label className="form-label text-white">Select Technology</label>
+              <Select
                 className="basic-single"
                 classNamePrefix="select"
                 defaultValue={technologies[0]}
@@ -222,7 +222,7 @@ const SearchDeveloper = () => {
                 isSearchable={true}
                 options={technologies}
                 onChange={(e) => setTechnology(e.value)}
-              /> */}
+              />
               {/* <input
                 type="text"
                 className="form-control"
@@ -230,10 +230,10 @@ const SearchDeveloper = () => {
                 value={technology}
               /> */}
             </div>
-            {/* <div className="col-md-4">
-                            <label className="form-label">Select Country</label>
+            <div className="col-md-4">
+                            <label className="form-label text-white" >Select Technology</label>
                             <input type="text" className="form-control" onChange={e => setLocation(e.target.value)} value={location} />
-                        </div> */}
+                        </div>
           </div>
           <button className="mt-4 btn btn-primary btn-lg w-100" onClick={getDevelopersByLocationAndTechnology}>
             <i className="fas fa-search"></i> Search{' '}
