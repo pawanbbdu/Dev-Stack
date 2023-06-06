@@ -4,7 +4,7 @@ import { Octokit } from '@octokit/rest';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 const octokit = new Octokit({
-  auth: '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'
+  auth: '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'
 });
 
 const SearchDeveloper = () => {

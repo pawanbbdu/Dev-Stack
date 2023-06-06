@@ -25,7 +25,7 @@ const Signup = () => {
         },
       });
       console.log(res.status);
-      if (res.status === 201) {
+      if (res.status === 200) {
         Swal.fire({
           icon: "success",
           title: "Success",
