@@ -2,7 +2,7 @@
   import { Octokit } from "@octokit/rest";
   import { Link } from "react-router-dom";
   const octokit = new Octokit({
-    auth: "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",
+    auth: "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",
   });
   const CompareDeveloper = () => {
     const [devUsername, setDevUsername] = useState("");
