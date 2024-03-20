@@ -11,5 +11,5 @@ mongoose.connect(url)
     
 });
 
-module.exports = mongoose;
+module.exports = mongoose
 // synchronous and asynchronous
