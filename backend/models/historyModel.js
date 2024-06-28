@@ -1,4 +1,5 @@
-const fs = require('fs');
+
+
 
 
 const {Schema, model} = require('../connection')
@@ -8,5 +9,6 @@ const myschema = new Schema({
     data : Object,
     createdAt : Date
 })
+
 
 module.exports = model('history', myschema);
